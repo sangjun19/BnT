@@ -21,10 +21,8 @@ for i in range(n):
         cnt1 += 1
         cnt2 += 1
     if flag1 or cnt1 >= m:
-        print(1, i)
         result += 1
     if flag2 or cnt2 >= m:
-        print(2, i)
         result += 1
 print(result)                    
     
