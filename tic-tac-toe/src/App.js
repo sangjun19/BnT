@@ -23,14 +23,14 @@ function Board({ xIsNext, squares, onPlay }) {
     }
     if (squares[i]) {
       return;
-      const temp = nextSquares[i];
-      nextSquares[i] = null;
-      console.log(squares.lenght);
-      if (prevSquares != null && arraysEqual(prevSquares, nextSquares)) {
-        xIsNext = !xIsNext;
-      } else {
-        return;
-      }
+      // const temp = nextSquares[i];
+      // nextSquares[i] = null;
+      // console.log(squares.lenght);
+      // if (prevSquares != null && arraysEqual(prevSquares, nextSquares)) {
+      //   xIsNext = !xIsNext;
+      // } else {
+      //   return;
+      // }
     }
     onPlay(nextSquares);
   }
