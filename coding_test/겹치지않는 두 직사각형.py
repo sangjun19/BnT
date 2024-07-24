@@ -6,19 +6,24 @@ def rectangle(sy, sx, ey, ex, arr):
     return sum
 
 def pick_pos(n, m, ay, ax, by, bx, arr):
-    value = 0
-    for i in range(ay, ay + n - 1):
-        for j in range(ax, ax + m - 1):
-            if i >= n - 1 or j >= m - 1:
+    value = float("-inf")
+    for i in range(ay, ay + n):
+        for j in range(ax, ax + m):
+            if i >= n or j >= m:
                 continue
-            if j >= bx:
-                continue
-            for k in range(by, by + n - 1):
-                for l in range(bx, bx + m - 1):
-                    if k >= n - 1 or l >= m - 1:
+            for k in range(by, by + n):
+                for l in range(bx, bx + m):
+                    if k >= n or l >= m:
                         continue
-                    v1 = rectangle(i, ay, j, ax, arr)
-                    v2 = rectangle(k, bx, l, by, arr)
+                    
+                    if i >= by and j >= bx:
+                        continue
+                    
+                    v1 = rectangle(ay, ax, i, j, arr)
+                    v2 = rectangle(by, bx, k, l, arr)
+                    if v1 + v2 == 14:
+                        print("A", ay, ax, i, j, v1)
+                        print("B", by, bx, k, l, v2)
                     value = max(value, v1 + v2)
     return value
 
@@ -27,11 +32,17 @@ def main():
     arr = []
     for _ in range(n):
         arr.append(list(map(int, input().split())))
-    result = 0
+    result = float("-inf")
     for i in range(n):
-        for j in range(m - 1):
-            for k in range(i, n):
-                for l in range(j + 1, m):
+        for j in range(m):
+            for k in range(n):
+                for l in range(m):
+                    if i == k and j == l:
+                        continue
+                    # print(i, j, k, l)
+                    # if j >= l:
+                    #     continue
+                    #print(i, j, k, l)
                     sum = pick_pos(n, m, i, j, k, l, arr)
                     result = max(result, sum)
 
