@@ -14,8 +14,7 @@ def main():
                 log.append(cnt)
                 cnt = 1
         log.append(cnt)
-        sum = len(log)
-        print(log)
+        sum = len(log)        
         for c in log:
             sum += (len(str(c)))
         result = min(result, sum)

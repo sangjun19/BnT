@@ -4,7 +4,6 @@ def move_ball(arr, y, x, d):
     ref = [[3, 2, 1, 0], [1, 0, 3, 2]]
     ny, nx = y, x
     while True:
-        print(ny, nx)
         if arr[ny][nx] != 0:
             d = ref[arr[ny][nx] -1][d]
             

@@ -21,9 +21,6 @@ def pick_pos(n, m, ay, ax, by, bx, arr):
                     
                     v1 = rectangle(ay, ax, i, j, arr)
                     v2 = rectangle(by, bx, k, l, arr)
-                    if v1 + v2 == 14:
-                        print("A", ay, ax, i, j, v1)
-                        print("B", by, bx, k, l, v2)
                     value = max(value, v1 + v2)
     return value
 
@@ -39,10 +36,6 @@ def main():
                 for l in range(m):
                     if i == k and j == l:
                         continue
-                    # print(i, j, k, l)
-                    # if j >= l:
-                    #     continue
-                    #print(i, j, k, l)
                     sum = pick_pos(n, m, i, j, k, l, arr)
                     result = max(result, sum)
 

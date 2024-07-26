@@ -4,7 +4,6 @@ def re_build(arr, s, e):
         if i >= s - 1 and i <= e - 1:
             continue
         temp.append(arr[i])
-    print(temp)
     return temp
 
 def main():
