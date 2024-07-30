@@ -8,7 +8,6 @@ def choose_far(arr, m, picked):
     global result2
     if m == 0:
         temp = calc_distance(picked[0][0], picked[0][1], picked[1][0], picked[1][1])
-        print(temp)
         result2 = max(result2, temp)
         return
     for i in range(len(arr)):
