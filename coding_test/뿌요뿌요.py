@@ -15,7 +15,6 @@ def find_bomb(arr, y, x):
             continue
         find_bomb(arr, ny, nx)            
 
-
 def main():
     global bomb_size, bomb_cnt
     max_boom = 0
@@ -29,6 +28,7 @@ def main():
                 continue
             bomb_size = 0
             find_bomb(arr, i, j)
+            
             if bomb_size >= 4:
                 bomb_cnt += 1
             max_boom = max(max_boom, bomb_size)
