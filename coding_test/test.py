@@ -1,26 +1,24 @@
+result = 0
+
+def back(arr, k, sum, limit):
+    global result
+    if limit == 0:
+        if sum == k:
+            result += 1
+    for i in range(len(arr)):
+        if sum + arr[i] <= k:
+            back(arr[i + 1:], k, sum + arr[i], limit - 1)
+    
 def main():
-    n, m, k = map(int, input().split())
-    arr = []
-    for _ in range(n):
-        temp = list(map(int, input().split()))
-        arr.append(temp[1:])
+    global result
+    n, k1, k2 = map(int, input().split())
+    arr = list(map(int, input().split()))
+    back(arr, k1, 0, 2)
+    print(result, end=' ')
     
-    dp = [[0] * (k + 1) for _ in range(n + 1)]
-    dp[0][0] = 1
-    
-    for i in range(1, n + 1):
-        coins = arr[i - 1]
-        
-        for j in range(k + 1):
-            dp[i][j] = dp[i - 1][j]
-        
-        for coin in coins:
-            for j in range(k, coin - 1, -1):
-                dp[i][j] = (dp[i][j] + dp[i - 1][j - coin]) % 10007
-                
-    for d in dp:
-        print(d)
-    print(dp[n][k])
+    result = 0
+    back(arr, k2, 0, 2)
+    print(result, end=' ')
     
 if __name__ == "__main__":
     main()
