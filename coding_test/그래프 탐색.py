@@ -3,13 +3,12 @@ cnt = 0
 
 def dfs(graph, visited, start):    
     global cnt
-    cnt += 1
     visited.append(start)
     if start not in graph:
         return
     for v in graph[start]:
         if v not in visited:
-            
+            cnt += 1
             dfs(graph, visited, v)
 
 def main():
