@@ -1,3 +1,6 @@
+# 탐색하야 할 것을 queue에 넣어놓고 시작, 각 시작 위치에서 탐색범위를 넓혀가며 탐색 가능
+# deque를 사용, pop(0)을 사용하면 시간복잡도가 O(n)이 되지만, deque를 사용하면 O(1)이 된다.
+
 from collections import deque
 
 def main():

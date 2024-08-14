@@ -1,3 +1,5 @@
+# 50점 - 실패
+
 s = input()
 q = int(input())
 arr = []

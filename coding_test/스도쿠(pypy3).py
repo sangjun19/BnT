@@ -1,3 +1,5 @@
+# 시간초과 pypy3로 제출
+
 def is_valid(sudo, cy, cx, num):
     
     for i in range(9):
