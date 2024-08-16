@@ -15,8 +15,8 @@ def main():
             if i == 1 and j == 1: continue
             result[i][j] = min(max(result[i][j], result[i - 1][j]), max(result[i][j], result[i][j - 1]))
     
-    for r in result:
-        print(*r)
+    # for r in result:
+    #     print(*r)
     print(result[n][n])
         
 if __name__ == "__main__":
