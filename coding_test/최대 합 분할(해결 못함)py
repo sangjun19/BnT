@@ -1,0 +1,22 @@
+def main():
+    n = int(input())
+    arr = list(map(int, input().split()))
+    dp = [0] * (14)
+    dp[0] = 1
+    for i in range(1, 14):
+        save = 0
+        for a in arr:
+            if i - a == a:
+                continue
+            if i - a >= 0 and dp[i - a] > 0:
+                if i - a != 0:
+                    save = max(dp[a], save)
+                dp[i] += 1
+                
+        if save > 1:
+            dp[i] -= save
+    
+    print(dp)
+
+if __name__ == "__main__":
+    main()
